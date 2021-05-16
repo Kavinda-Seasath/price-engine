@@ -1,16 +1,15 @@
 package com.assessment.shop.priceengine.data.models;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-/*@Entity
-@Table(name = "items")*/
+@Entity
+@Table(name = "items")
 public class ItemModel {
 
     @Id
-    private String id;
+    @GeneratedValue
+    private Integer id;
+
     private String itemName;
     private String unitsPerCarton;
     private String cartonPrice;
@@ -18,11 +17,11 @@ public class ItemModel {
     private String discountPercentage;
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
